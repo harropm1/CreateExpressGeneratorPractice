@@ -21,8 +21,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//index connection
 app.use('/', indexRouter);
+//anything that starts with /user connection
 app.use('/users', usersRouter);
+//leagues connection
 app.use('/leagues', leaguesRouter);
 
 // catch 404 and forward to error handler
@@ -42,3 +45,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+/*this is how Rob would have written it:
+*/

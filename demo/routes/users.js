@@ -3,16 +3,17 @@ var router = express.Router();
 
 const authorization = require('./../utils/auth');
 
-//this is the get for the login page
+//this is the get for the register page (/users/login)
 router.get('/login', function(req, res, next) {
   res.render('login', {title: 'Login'});
 });
 
-//this is the get for the register page
+//this is the get for the register page (/users/register)
 router.get('/register', function(req, res, next) {
   res.render('register', {title: 'Register'});
 });
 
+//this is the post for the login page (/users/login)
 router.post('/login', function(request, response) {
   // get user data from form
   var email = request.body.email;
