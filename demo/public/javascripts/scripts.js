@@ -22,8 +22,9 @@ $(document).ready(function () {
       "email": $('#inputEmail').val(),
       "password": $('#inputPassword').val()
     };
+    //console.log(data);
 
-    $.post("http://localhost:3000/", JSON.stringify(data), function () {
+    $.post("http://127.0.0.1:3000/users/login", data, function () {
     })
       .done(function (res) {
         $('#msg').removeClass('alert-danger');
@@ -35,7 +36,7 @@ $(document).ready(function () {
         $('#inputPassword').val('');
         $('#inputPassword').attr("disabled", true);
   
-        $('#lock').attr('src', 'img/unlock.png');
+        $('#lock').attr('src', '/images/unlock.png');
   
         $('#submitBtn').hide();
         $('#logoutBtn').show();
